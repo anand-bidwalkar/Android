@@ -1,0 +1,11 @@
+#Tue Sep 10 15:29:12 IST 2013
+logcat.view.colsize.Text=729
+logcat.view.colsize.TID=71
+logcat.view.colsize.Level=35
+ddms.logcat.automonitor.userprompt=true
+logcat.view.colsize.Application=189
+logcat.view.colsize.PID=71
+logcat.view.colsize.Tag=145
+ddms.logcat.auotmonitor.level=error
+logcat.view.colsize.Time=194
+eclipse.preferences.version=1

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <Button
+        android:id="@+id/buttonWinter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="31dp"
+        android:layout_marginTop="48dp"
+        android:text="Winter" />
+
+    <Button
+        android:id="@+id/buttonSunset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/buttonWinter"
+        android:layout_alignBottom="@+id/buttonWinter"
+        android:layout_marginLeft="44dp"
+        android:layout_toRightOf="@+id/buttonWinter"
+        android:text="Sunset" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignRight="@+id/buttonSunset"
+        android:layout_below="@+id/buttonWinter"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/ic_launcher" />
+
+</RelativeLayout>

@@ -1,0 +1,7 @@
+
+public class Person 
+{
+   String name;
+   static int count;
+   final int voting_age;
+}

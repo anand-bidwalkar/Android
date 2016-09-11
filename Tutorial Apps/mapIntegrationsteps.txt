@@ -1,0 +1,67 @@
+Map v2 integration
+
+1. go to DOS prompt 
+2. open user directory
+     a) c:\documents and settings\username\.android on XP
+     b) c:\users\username\.android on win7 and later
+
+3. type following command 
+keytool -list -v -keystore debug.keystore -alias androiddebugkey -storepass android -keypass android
+
+4. from ouprut of following command , The line that begins SHA1 contains the certificate's SHA-1 fingerprint. The fingerprint is the sequence of 20 two-digit hexadecimal numbers separated by colons. copy it and save somewhere for later use.
+
+5. create an android app with some package name like "com.uni.mymapapp"
+6. Go to link -> https://code.google.com/apis/console and provide gmail username/password
+7. Click on dropdown menu and select 'create' option
+8. give a Title like 'MapDemo' and click create button.
+9. Now click on 'Services' Menu from left and select(check) 'Google Maps Android API v2' on right.
+10. click on API Access link from left, then click on 'Create new Android key' button.
+11 provide SHA-1 fingerprint(saved in step 4) along with application package(step 5) seperated by ;
+ex- CE:04:B9:EB:54:0C:A6:C5:69:CE:8E:9B:EE:64:10:97:88:BB:16:D0;com.uni.mymapapp
+ now u can see a new key 4 appeared
+like - AIzaSyBdOEUOme1c3PCUq-KebkPAxA5npgiOH1U
+12. Now open android manifest and add below tag inside application tag with you api key
+
+ <meta-data
+    android:name="com.google.android.maps.v2.API_KEY"
+    android:value="your_api_key"/>
+
+
+13. Add the following elements to your manifest. Replace 'com.example.mapdemo' with the package name of your application. 
+<permission
+        android:name="com.example.mapdemo.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature"/>
+<uses-permission android:name="com.example.mapdemo.permission.MAPS_RECEIVE"/>
+
+14.  Add following permissions in manifest
+
+<uses-permission android:name="android.permission.INTERNET"/>
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+<uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+
+15. Google Maps Android API requires OpenGL ES version 2 so add following tag to manifest 
+
+<uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true"/>
+
+16. in activity_main.xml add follwing code to display map
+
+<fragment 
+          android:id="@+id/map"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:name="com.google.android.gms.maps.MapFragment"/>
+
+----------------------------------------------------------------------------------------------
+Install Google Play Services SDK using SDK manager and add reference of it in your project by following below steps:-
+
+
+1.  Open SDK manager and select Extras > Google Play services, and install it. 
+2. Now import the library project into your workspace from the path <android-sdk-folder>/extras/google/google_play_services/libproject/google-play-services_lib
+using Click File > Import, select Android > Existing Android Code into Workspace
+
+3. Now Reference the library project in your Android project. (help -> http://developer.android.com/tools/projects/projects-eclipse.html#ReferencingLibraryProject)
+
+
